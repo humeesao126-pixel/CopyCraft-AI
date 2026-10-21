@@ -1,0 +1,23 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.venv/
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local backups
+app_backup.py
+app_ui_final.py
+style_backup.css
+style_ui_final.css
+batch_backup.py
+
+# Editor and system files
+.vscode/
+.DS_Store
+Thumbs.db

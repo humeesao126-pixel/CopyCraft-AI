@@ -1,0 +1,195 @@
+# CopyCraft AI
+
+### Automated Copywriting & Tone Transformer
+
+CopyCraft AI is an AI-powered marketing content generation application developed as part of the **DecodeLabs Generative AI Industrial Training Program (2026)**.
+
+It generates platform-specific marketing copy based on product information, writing tone, and adjustable AI generation parameters.
+
+The application includes a Streamlit interface, structured output validation, asynchronous batch generation, and a command-line interface.
+
+## Features
+
+- **AI Marketing Copy Generation:** Generate content for LinkedIn, Instagram, and Email.
+- **Tone Customization:** Choose from Professional, Friendly, Exciting, Persuasive, Casual, and Luxury tones.
+- **Dynamic Prompt Templates:** Automatically build prompts using product details, platform requirements, and writing styles.
+- **Generation Controls:** Adjust Temperature and Top-P.
+- **Structured Output:** Validate model responses with Pydantic.
+- **Asynchronous Batch Generation:** Generate content for multiple products using concurrent Gemini API requests, with a concurrency limit of two.
+- **CSV Processing:** Upload product data, view results, and download generated content as CSV.
+- **Generation History:** Review previous generations within the active Streamlit session.
+- **Command-Line Interface:** Generate marketing content directly through the terminal.
+- **Content Export:** Download individual marketing outputs as text files.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Core application logic |
+| Streamlit | Web interface |
+| Google Gemini API | AI content generation |
+| Pydantic | Data validation |
+| Pandas | CSV processing |
+| asyncio | Asynchronous batch execution |
+| argparse | Command-line interface |
+| python-dotenv | Environment variable management |
+
+**AI model:** Gemini 3.5 Flash-Lite
+
+## Architecture
+
+```text
+                  User
+                   |
+          Streamlit / CLI
+                   |
+             User Inputs
+                   |
+            Pydantic Input
+              Validation
+                   |
+          Dynamic Prompt Builder
+                   |
+           Gemini API Client
+                   |
+         Structured JSON Response
+                   |
+          Pydantic Validation
+                   |
+           Formatted Marketing
+                 Copy
+                   |
+       Preview / History / Export
+```
+
+Batch generation uses an asynchronous processing pipeline with concurrency controls, per-product error handling, and CSV result export.
+
+## Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/humeesao126-pixel/CopyCraft-AI.git
+cd CopyCraft-AI
+```
+
+**2. Create a virtual environment**
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+**3. Install dependencies**
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+**4. Configure the Gemini API**
+
+Create a `.env` file in the project root:
+
+```dotenv
+GEMINI_API_KEY=your_api_key_here
+```
+
+Obtain an API key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+Do not commit your `.env` file or API keys to GitHub.
+
+## Running the Application
+
+Start the Streamlit interface:
+
+```bash
+python -m streamlit run app.py
+```
+
+Open the local URL displayed in the terminal, typically `http://localhost:8501`.
+
+### Command-Line Usage
+
+```bash
+python cli.py --product "Wireless Headphones" --description "Noise cancellation and 30-hour battery life" --platform Instagram --tone Exciting
+```
+
+Optional parameters:
+
+```text
+--temperature 0.7
+--top-p 0.9
+```
+
+### Batch Generation
+
+Prepare a CSV file containing the following columns:
+
+```csv
+product_name,description,platform,tone
+Wireless Headphones,Noise cancellation and 30-hour battery life,Instagram,Exciting
+Smart Watch,Fitness tracking and heart rate monitoring,LinkedIn,Professional
+```
+
+Open the Batch Generate page, upload the CSV, select Generate Batch Content, and download the resulting CSV.
+
+Batch processing supports a maximum of 20 products per upload. Concurrent generation is limited to two requests.
+
+## Project Structure
+
+```text
+CopyCraft-AI/
+├── app.py
+├── batch.py
+├── cli.py
+├── config.py
+├── generator.py
+├── models.py
+├── prompts.py
+├── style.css
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── .env.example
+└── .streamlit/
+    └── config.toml
+```
+
+## Limitations
+
+- Gemini API availability and generation speed depend on the network, model access, and API quota.
+- Generation history is stored in Streamlit session state and is not permanently persisted.
+- Generated marketing content should be reviewed before publication for factual accuracy and brand suitability.
+- Batch generation currently limits concurrent requests to two and uses timeout handling for individual requests.
+
+## Future Enhancements
+
+A future version of CopyCraft AI may include:
+
+- React and FastAPI architecture
+- Advanced brand voice and target audience controls
+- Multiple generated variations
+- Content rewriting and refinement
+- Persistent content history using SQLite
+- Improved deployment and monitoring
+
+## Project Information
+
+**Project:** CopyCraft AI — Automated Copywriting & Tone Transformer
+
+**Program:** DecodeLabs Generative AI Industrial Training
+
+**Year:** 2026
+
+**Developer:** Humeesa Obaid
+
+**Version:** 1.0.0
+
+---
+
+Built for practical learning in Generative AI engineering, prompt orchestration, structured output, and asynchronous application development.

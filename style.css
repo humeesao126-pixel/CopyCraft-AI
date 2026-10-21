@@ -1,0 +1,396 @@
+
+/* COPYCRAFT AI — LIGHT MONOCHROME THEME */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --black: #171717;
+    --dark: #262626;
+    --white: #FFFFFF;
+    --background: #F7F7F7;
+    --border: #E5E5E5;
+    --text: #171717;
+    --muted: #666666;
+}
+
+html, body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.stApp {
+    background: var(--background);
+    color: var(--text);
+}
+
+/* SIDEBAR */
+
+section[data-testid="stSidebar"] {
+    background: #171717;
+    border-right: 1px solid #333333;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label {
+    color: #F5F5F5 !important;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: #424242;
+}
+
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    color: #BDBDBD !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stAlert"] {
+    background: #303030;
+    color: #F5F5F5;
+    border: 1px solid #454545;
+}
+
+/* MAIN CONTENT */
+
+.block-container {
+    max-width: 1450px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+h1, h2, h3 {
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+/* HERO BANNER */
+
+.hero-banner {
+    background: linear-gradient(
+        115deg,
+        #FFFFFF,
+        #F0F0F0
+    );
+    padding: 42px;
+    border-radius: 20px;
+    border: 1px solid #E4E4E4;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.035);
+}
+
+.hero-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    color: #171717;
+    letter-spacing: -1.2px;
+    margin-bottom: 12px;
+}
+
+.hero-banner h3 {
+    color: #262626 !important;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: #626262;
+    line-height: 1.7;
+    max-width: 730px;
+}
+
+/* FEATURE PILLS */
+
+.feature-pill {
+    display: inline-block;
+    background: #F3F3F3;
+    border: 1px solid #E2E2E2;
+    color: #333333;
+    padding: 9px 14px;
+    border-radius: 24px;
+    margin: 5px 7px 5px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* FORM CARD */
+
+div[data-testid="stForm"] {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.035);
+}
+
+/* INPUT FIELDS */
+
+.stTextInput input,
+.stTextArea textarea {
+    background: #FAFAFA !important;
+    color: #171717 !important;
+    border: 1px solid #DDDDDD !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: #171717 !important;
+}
+
+/* GENERATE BUTTON */
+
+div[data-testid="stFormSubmitButton"] button {
+    background: #171717 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #171717 !important;
+    border-radius: 10px !important;
+    min-height: 49px !important;
+    font-weight: 700 !important;
+}
+
+div[data-testid="stFormSubmitButton"] button:hover {
+    background: #353535 !important;
+    color: #FFFFFF !important;
+}
+
+/* GENERATED OUTPUT */
+
+.output-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 18px;
+    padding: 25px;
+    margin-top: 16px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.025);
+}
+
+div[data-testid="stDownloadButton"] button {
+    background: #F1F1F1 !important;
+    border: 1px solid #DADADA !important;
+    color: #171717 !important;
+    border-radius: 10px !important;
+    min-height: 46px;
+    font-weight: 600;
+}
+
+div[data-testid="stDownloadButton"] button:hover {
+    background: #E3E3E3 !important;
+    color: #171717 !important;
+}
+
+/* COLUMN SPACING */
+
+div[data-testid="stHorizontalBlock"] {
+    gap: 1.4rem;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    color: #777777;
+    font-size: 13px;
+    padding-top: 30px;
+}
+
+
+
+/* FINAL UI REFINEMENTS */
+
+/* Sidebar slider layout */
+
+section[data-testid="stSidebar"] [data-testid="stSlider"] {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+
+/* Sidebar input and slider contrast */
+
+section[data-testid="stSidebar"] [data-testid="stSlider"] {
+    color: #F5F5F5 !important;
+}
+
+/* Navigation appearance */
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    padding: 10px 12px;
+    border-radius: 9px;
+    transition: background 0.2s ease;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    background: #303030;
+}
+
+/* Workspace spacing */
+
+.block-container {
+    max-width: 1450px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+div[data-testid="stHorizontalBlock"] {
+    gap: 1.5rem;
+}
+
+/* Form appearance */
+
+div[data-testid="stForm"] {
+    border: 1px solid #E5E5E5;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: none;
+}
+
+/* Output appearance */
+
+.output-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: none;
+}
+
+/* Black primary button */
+
+div[data-testid="stFormSubmitButton"] button {
+    background: #171717 !important;
+    color: #FFFFFF !important;
+    border-radius: 10px !important;
+    min-height: 50px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+
+
+/* Minimal sidebar navigation */
+
+section[data-testid="stSidebar"]
+[data-testid="stRadio"] div[role="radiogroup"] {
+    gap: 5px;
+}
+
+section[data-testid="stSidebar"]
+[data-testid="stRadio"] div[role="radiogroup"] label {
+    display: flex;
+    align-items: center;
+    padding: 11px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+section[data-testid="stSidebar"]
+[data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) {
+    background: #303030;
+}
+
+section[data-testid="stSidebar"]
+[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child {
+    display: none;
+}
+
+
+
+/* GENERATION SETTINGS — SLIDER FIX */
+
+/* Restore the full slider container */
+section[data-testid="stSidebar"] [data-testid="stSlider"] {
+    width: 100% !important;
+}
+
+/* Restore native slider track width */
+section[data-testid="stSidebar"] [data-baseweb="slider"] {
+    width: 100% !important;
+    min-width: 180px !important;
+}
+
+/* Ensure the slider track stretches */
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div {
+    width: 100% !important;
+}
+
+/* Improve spacing */
+section[data-testid="stSidebar"] [data-testid="stSlider"] {
+    margin-bottom: 18px;
+}
+
+/* Slider values */
+section[data-testid="stSidebar"] [data-testid="stSlider"] p {
+    font-size: 13px;
+    color: #E5E5E5 !important;
+}
+
+/* Prevent slider clipping */
+section[data-testid="stSidebar"] {
+    overflow: visible;
+}
+
+
+/* Sidebar slider width fix */
+
+section[data-testid="stSidebar"] [data-testid="stSlider"] {
+    width: 100% !important;
+    margin-bottom: 18px;
+}
+
+section[data-testid="stSidebar"] [data-baseweb="slider"] {
+    width: 100% !important;
+    min-width: 180px !important;
+}
+
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div {
+    width: 100% !important;
+}
+
+
+/* MONOCHROME SLIDER COLORS */
+
+/* Inactive slider track */
+section[data-testid="stSidebar"]
+[data-testid="stSlider"] div[data-baseweb="slider"]
+div[role="slider"] {
+    background-color: #FFFFFF !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+/* Slider track */
+section[data-testid="stSidebar"]
+[data-testid="stSlider"] div[data-baseweb="slider"] > div {
+    background-color: #777777;
+}
+
+/* Slider thumb */
+section[data-testid="stSidebar"]
+div[role="slider"] {
+    background-color: #FFFFFF !important;
+    box-shadow: 0 0 0 2px #171717 !important;
+}
+
+/* Slider values */
+section[data-testid="stSidebar"]
+[data-testid="stSlider"] p {
+    color: #FFFFFF !important;
+}
+
+
+
+/* Batch Generate primary button */
+
+div[data-testid="stButton"] button[kind="primary"] {
+    background: #171717 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #171717 !important;
+    border-radius: 10px !important;
+    min-height: 48px !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+
+div[data-testid="stButton"] button[kind="primary"]:hover {
+    background: #333333 !important;
+    color: #FFFFFF !important;
+}
